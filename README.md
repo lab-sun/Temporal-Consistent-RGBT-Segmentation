@@ -6,8 +6,7 @@ The official implementation of **Temporal Consistency for RGB-Thermal Data-based
 </div>
 
 ## Introduction
-We propose a temporal-consistent framework for RGB-T semantic segmentation, including a method to synthesize images at the next moment and loss functions to ensure segmentation
-consistency across different frames.
+We propose a temporally consistent framework for RGB-T semantic segmentation, which includes a method to synthesize images for the next moment and loss functions to ensure segmentation consistency across different frames.
 
 ## Dataset
 Download [MF dataset](https://www.mi.t.u-tokyo.ac.jp/static/projects/mil_multispectral/) or [Our preprocessed version](https://drive.google.com/file/d/1NFdIigejYmCHFrdN2MSe1vxHHAs739SA/view?usp=sharing) and place them in 'datasets' folder in the following structure:
