@@ -36,6 +36,52 @@ Download the pretrained segformer here [pretrained segformer](https://drive.goog
 ```
 
 ## Usage
+* Clone this repo
+```
+$ git clone https://github.com/lab-sun/Temporal-Consistent-RGBT-Segmentation.git
+```
+* Build docker image
+```
+$ cd ~/Temporal-Consistent-RGBT-Segmentation
+$ docker build -t docker_image_tcfusenet .
+```
+* Download the dataset
+```
+$ (You should be in the Temporal-Consistent-RGBT-Segmentation folder)
+$ mkdir ./datasets
+$ cd ./datasets
+$ (download our preprocessed dataset.zip in this folder)
+$ unzip -d .. dataset.zip
+```
+* To reproduce our results, you need to download our pretrained weights
+```
+$ (You should be in the Temporal-Consistent-RGBT-Segmentation folder)
+$ mkdir ./pretrained
+$ cd ./pretrained
+$ (download the pretrained segformer weights in this folder)
+$ mkdir ./TCFuseNet_pth
+$ cd ./TCFuseNet_pth
+$ (download our pretrained CMX weights in this folder)
+$ docker run -it --shm-size 8G -p 1234:6006 --name docker_container_tcfusenet --gpus all -v ~/Temporal-Consistent-RGBT-Segmentation:/workspace docker_image_tcfusenet
+$ cd /workspace
+$ python3 eval.py
+```
+* To train our method
+```
+$ (You should be in the Temporal-Consistent-RGBT-Segmentation folder)
+$ docker run -it --shm-size 8G -p 1234:6006 --name docker_container_tcfusenet --gpus all -v ~/Temporal-Consistent-RGBT-Segmentation:/workspace docker_image_tcfusenet
+$ (currently, you should be in the docker)
+$ cd /workspace
+$ python3 train.py
+```
+* To see the training process
+```
+$ (fire up another terminal)
+$ docker exec -it docker_container_igfnet /bin/bash
+$ cd /workspace
+$ tensorboard --bind_all --logdir=./runs/tensorboard_log/
+$ (fire up your favorite browser with http://localhost:1234, you will see the tensorboard)
+```
 
 ## Result
 We offer the pre-trained weights of our method modified based on CMX and RTFNet.
