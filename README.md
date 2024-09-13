@@ -50,8 +50,8 @@ $ docker build -t docker_image_tcfusenet .
 $ (You should be in the Temporal-Consistent-RGBT-Segmentation folder)
 $ mkdir ./datasets
 $ cd ./datasets
-$ (download our preprocessed dataset.zip in this folder)
-$ unzip -d .. dataset.zip
+$ (download our preprocessed MFNet.zip in this folder)
+$ unzip -d .. MFNet.zip
 ```
 * To reproduce our results, you need to download our pretrained weights
 ```
@@ -69,6 +69,9 @@ $ python3 eval.py
 * To train our method
 ```
 $ (You should be in the Temporal-Consistent-RGBT-Segmentation folder)
+$ mkdir ./pretrained
+$ cd ./pretrained
+$ (download the pretrained segformer weights in this folder)
 $ docker run -it --shm-size 8G -p 1234:6006 --name docker_container_tcfusenet --gpus all -v ~/Temporal-Consistent-RGBT-Segmentation:/workspace docker_image_tcfusenet
 $ (currently, you should be in the docker)
 $ cd /workspace
@@ -77,11 +80,12 @@ $ python3 train.py
 * To see the training process
 ```
 $ (fire up another terminal)
-$ docker exec -it docker_container_igfnet /bin/bash
+$ docker exec -it docker_container_tcfusenet /bin/bash
 $ cd /workspace
-$ tensorboard --bind_all --logdir=./runs/tensorboard_log/
+$ tensorboard --bind_all --logdir=./CMX_mit_b2/tensorboard_log/
 $ (fire up your favorite browser with http://localhost:1234, you will see the tensorboard)
 ```
+The results will be saved in the `./CMX_mit_b2` folder.
 
 ## Result
 We offer the pre-trained weights of our method modified based on CMX and RTFNet.
@@ -100,6 +104,19 @@ We offer the pre-trained weights of our method modified based on CMX and RTFNet.
 | Our-con | ResNet-152 | 54.1% | [RTF-152-con](https://drive.google.com/file/d/1-PuiNRB-bYRh7eiurUvgLnWSAepgBwNv/view?usp=sharing) |
 
 ## Citation
+If you use our work in your research, please cite:
+
+```
+    @ARTICLE{li2024tcfusenet,
+      author={Li, Haotian and Chu, Henry K. and Sun, Yuxiang},
+      journal={IEEE Robotics and Automation Letters}, 
+      title={Temporal Consistency for RGB-Thermal Data-based Semantic Scene Understanding}, 
+      year={2024},
+      volume={},
+      number={},
+      pages={1-8},
+      doi={10.1109/LRA.2024.3458594}}
+```
 
 ## Acknowledgement
 Some of the codes are borrowed from [CMX](https://github.com/huaaaliu/RGBX_Semantic_Segmentation).
