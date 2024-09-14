@@ -87,7 +87,7 @@ $ (fire up your favorite browser with http://localhost:1234, you will see the te
 ```
 The results will be saved in the `./CMX_mit_b2` folder.
 
-## Result
+## Results
 We offer the pre-trained weights of our method modified based on CMX and RTFNet.
 
 ### CMX
@@ -107,15 +107,13 @@ We offer the pre-trained weights of our method modified based on CMX and RTFNet.
 If you use our work in your research, please cite:
 
 ```
-    @ARTICLE{li2024tcfusenet,
-      author={Li, Haotian and Chu, Henry K. and Sun, Yuxiang},
-      journal={IEEE Robotics and Automation Letters}, 
-      title={Temporal Consistency for RGB-Thermal Data-based Semantic Scene Understanding}, 
+    @article{li2024temporal,
+      title={Temporal Consistency for RGB-Thermal Data-based Semantic Scene Understanding},
+      author={Li, Haotian and Chu, Henry K and Sun, Yuxiang},
+      journal={IEEE Robotics and Automation Letters},
       year={2024},
-      volume={},
-      number={},
-      pages={1-8},
-      doi={10.1109/LRA.2024.3458594}}
+      publisher={IEEE}
+    }
 ```
 
 ## Acknowledgement
