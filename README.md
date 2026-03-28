@@ -107,13 +107,15 @@ We offer the pre-trained weights of our method modified based on CMX and RTFNet.
 If you use our work in your research, please cite:
 
 ```
-    @article{li2024temporal,
-      title={Temporal Consistency for RGB-Thermal Data-based Semantic Scene Understanding},
-      author={Li, Haotian and Chu, Henry K and Sun, Yuxiang},
-      journal={IEEE Robotics and Automation Letters},
-      year={2024},
-      publisher={IEEE}
-    }
+@ARTICLE{li2024temporal,
+  author={Haotian Li and Henry K. Chu and Yuxiang Sun},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Temporal Consistency for RGB-Thermal Data-Based Semantic Scene Understanding}, 
+  year={2024},
+  volume={9},
+  number={11},
+  pages={9757-9764},
+  doi={10.1109/LRA.2024.3458594}}
 ```
 
 ## Acknowledgement
